@@ -2,32 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
+.sidebar-links a {
+  margin-top: 1rem;
+}
+.sidebar-links a:hover {
+  color: #cfcfcf;
+  transition: all;
+  transition-duration: 0.3s;
+}
+/* .sidebar-links h2 {
+  margin-top: 1rem;
+} */
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.vehicle_config img {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 4rem;
+}
+.vehicle_config p {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.passive_sheet p:first-child {
+  margin-top: 1rem;
 }

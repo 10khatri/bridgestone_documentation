@@ -1,6 +1,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
+import Image from "next/image";
+import bridgeStoneLogo from "../public/logo-light.png";
+import Sidebar from "@/components/Sidebar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -11,7 +15,24 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main className="flex ">
+          <div className="w-64 h-screen p-4 bg-side-bar">
+            <div className="flex items-center justify-center px-3 max-w-43">
+              <Link href="/">
+                <Image src={bridgeStoneLogo} alt="logo" />
+              </Link>
+            </div>
+            <div>
+              <Sidebar />
+            </div>
+          </div>
+          <div className="bg-main-bar w-[80%] p-12 h-screen overflow-scroll ">
+            {" "}
+            {children}
+          </div>
+        </main>
+      </body>
     </html>
   );
 }
