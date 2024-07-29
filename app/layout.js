@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import bridgeStoneLogo from "../public/logo-light.png";
 import Sidebar from "@/components/Sidebar";
+import { Suspense } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {

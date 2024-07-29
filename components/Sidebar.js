@@ -35,7 +35,7 @@ export default function Sidebar() {
               : ""
           }
         >
-          Vehicle configuration api
+          Vehicle configuration
         </p>
       </Link>
       <Link href="upload-actual-cost">
@@ -46,7 +46,7 @@ export default function Sidebar() {
               : ""
           }
         >
-          Upload cost api{" "}
+          Upload cost{" "}
         </p>
       </Link>
 
@@ -58,7 +58,7 @@ export default function Sidebar() {
               : ""
           }
         >
-          Upload tyre api
+          Data import
         </p>
       </Link>
       <Link href="get-reports">
@@ -67,7 +67,7 @@ export default function Sidebar() {
             currentPath == "/get-reports" ? "text-secondary-text underline" : ""
           }
         >
-          Tyre reports api
+          All fleets
         </p>
       </Link>
     </div>
