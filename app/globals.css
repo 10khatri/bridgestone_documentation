@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: __Inter_aaf875, __Inter_Fallback_aaf875;
+
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -28,6 +29,15 @@ body {
   margin-top: 3rem;
   margin-bottom: 1rem;
 }
+.vehicle_config .description {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.vehicle_config .description-nested {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
 .passive_sheet p:first-child {
   margin-top: 1rem;
 }

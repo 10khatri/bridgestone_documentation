@@ -70,6 +70,15 @@ export default function Sidebar() {
           All fleets
         </p>
       </Link>
+      <Link href="all-api">
+        <p
+          className={
+            currentPath == "/all-api" ? "text-secondary-text underline" : ""
+          }
+        >
+          Api
+        </p>
+      </Link>
     </div>
   );
 }
