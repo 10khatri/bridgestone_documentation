@@ -31,22 +31,9 @@ export default function page() {
           </p>
           <div className="relative max-h-[370px]">
             <span className="absolute top-2 right-2">🟢</span>
-            {/* <pre className="p-4 overflow-x-auto rounded max-h-[370px] bg-side-bar text-l text-secondary-text">
+            <pre className="p-4 overflow-x-auto rounded max-h-[370px] bg-side-bar text-l text-secondary-text">
               {JSON.stringify(responseData.get_all_fleets, null, 2)}
-            </pre> */}
-            <ReactJson
-              src={data}
-              onEdit={handleEdit}
-              onAdd={handleEdit}
-              onDelete={handleEdit}
-              theme="monokai"
-              style={{
-                padding: "1rem",
-                borderRadius: "8px",
-                backgroundColor: "#2d2d2d",
-                color: "#fff",
-              }}
-            />
+            </pre>
           </div>
           <button
             onClick={handleSave}
