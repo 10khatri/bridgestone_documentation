@@ -1,19 +1,6 @@
-"use client";
-import React, { useState } from "react";
-import ReactJson from "react-json-view";
+import React from "react";
 import responseData from "@/public/data/responseData";
 export default function page() {
-  const [data, setData] = useState(responseData.get_all_fleets);
-  const handleEdit = (edit) => {
-    const updatedData = edit.updated_src;
-    setData(updatedData);
-  };
-  const handleSave = () => {
-    // Save the data locally (e.g., in localStorage)
-    localStorage.setItem("jsonData", JSON.stringify(data));
-    alert("Data saved locally!");
-  };
-
   return (
     <div className="vehicle_config ">
       <h1 className="mb-4 text-5xl font-bold text-secondary-text ">Apis</h1>
