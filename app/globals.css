@@ -41,3 +41,7 @@ body {
 .passive_sheet p:first-child {
   margin-top: 1rem;
 }
+
+.sub-links p {
+  margin-top: 0.2rem;
+}

@@ -1,6 +1,19 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import ReactJson from "react-json-view";
 import responseData from "@/public/data/responseData";
 export default function page() {
+  const [data, setData] = useState(responseData.get_all_fleets);
+  const handleEdit = (edit) => {
+    const updatedData = edit.updated_src;
+    setData(updatedData);
+  };
+  const handleSave = () => {
+    // Save the data locally (e.g., in localStorage)
+    localStorage.setItem("jsonData", JSON.stringify(data));
+    alert("Data saved locally!");
+  };
+
   return (
     <div className="vehicle_config ">
       <h1 className="mb-4 text-5xl font-bold text-secondary-text ">Apis</h1>
@@ -18,10 +31,29 @@ export default function page() {
           </p>
           <div className="relative max-h-[370px]">
             <span className="absolute top-2 right-2">🟢</span>
-            <pre className="p-4 overflow-x-auto rounded max-h-[370px] bg-side-bar text-l text-secondary-text">
+            {/* <pre className="p-4 overflow-x-auto rounded max-h-[370px] bg-side-bar text-l text-secondary-text">
               {JSON.stringify(responseData.get_all_fleets, null, 2)}
-            </pre>
+            </pre> */}
+            <ReactJson
+              src={data}
+              onEdit={handleEdit}
+              onAdd={handleEdit}
+              onDelete={handleEdit}
+              theme="monokai"
+              style={{
+                padding: "1rem",
+                borderRadius: "8px",
+                backgroundColor: "#2d2d2d",
+                color: "#fff",
+              }}
+            />
           </div>
+          <button
+            onClick={handleSave}
+            className="p-2 mt-4 text-white bg-blue-500 rounded"
+          >
+            Save Data
+          </button>
         </div>
         <h2 className="pt-6 text-xl font-bold text-secondary-text">
           get all contracts
@@ -76,7 +108,10 @@ export default function page() {
             </pre>
           </div>
         </div>
-        <h2 className="pt-6 text-xl font-bold text-secondary-text">
+        <h2
+          id="actual-cost"
+          className="pt-6 text-xl font-bold text-secondary-text"
+        >
           upload actual cost
         </h2>
         <div>
@@ -106,7 +141,10 @@ export default function page() {
             </pre>
           </div>
         </div>
-        <h2 className="pt-6 text-xl font-bold text-secondary-text">
+        <h2
+          id="standard-cost"
+          className="pt-6 text-xl font-bold text-secondary-text"
+        >
           upload standard cost
         </h2>
         <div>
@@ -136,7 +174,10 @@ export default function page() {
             </pre>
           </div>
         </div>
-        <h2 className="pt-6 text-xl font-bold text-secondary-text">
+        <h2
+          id="vehicle-configuration"
+          className="pt-6 text-xl font-bold text-secondary-text"
+        >
           vehicle configuration
         </h2>
         <div>
@@ -186,7 +227,10 @@ export default function page() {
             </pre>
           </div>
         </div>
-        <h2 className="pt-6 text-xl font-bold text-secondary-text">
+        <h2
+          id="passive-tyre"
+          className="pt-6 text-xl font-bold text-secondary-text"
+        >
           passive tyre
         </h2>
         <div>
@@ -253,7 +297,10 @@ export default function page() {
             </pre>
           </div>
         </div>
-        <h2 className="pt-6 text-xl font-bold text-secondary-text">
+        <h2
+          id="active-tyre"
+          className="pt-6 text-xl font-bold text-secondary-text"
+        >
           active tyre
         </h2>
         <div>
@@ -320,7 +367,10 @@ export default function page() {
             </pre>
           </div>
         </div>
-        <h2 className="pt-6 text-xl font-bold text-secondary-text">
+        <h2
+          id="damaged-tyre"
+          className="pt-6 text-xl font-bold text-secondary-text"
+        >
           remove tyre
         </h2>
         <div>
@@ -389,7 +439,10 @@ export default function page() {
             </pre>
           </div>
         </div>
-        <h2 className="pt-6 text-xl font-bold text-secondary-text">
+        <h2
+          id="vehicle-running"
+          className="pt-6 text-xl font-bold text-secondary-text"
+        >
           vehicle running
         </h2>
         <div>
