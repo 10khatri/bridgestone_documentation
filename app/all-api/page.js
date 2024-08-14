@@ -22,12 +22,6 @@ export default function page() {
               {JSON.stringify(responseData.get_all_fleets, null, 2)}
             </pre>
           </div>
-          <button
-            onClick={handleSave}
-            className="p-2 mt-4 text-white bg-blue-500 rounded"
-          >
-            Save Data
-          </button>
         </div>
         <h2 className="pt-6 text-xl font-bold text-secondary-text">
           get all contracts
