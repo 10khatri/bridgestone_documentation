@@ -2,6 +2,8 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
 export default function Sidebar() {
   const currentPath = usePathname();
@@ -86,7 +88,14 @@ export default function Sidebar() {
           }
           onClick={() => setIsApiSublistOpen(!isApiSublistOpen)}
         >
-          Api
+          Api{" "}
+          <span className="mt-2 ml-4 text-primary-text">
+            {isApiSublistOpen ? (
+              <FontAwesomeIcon icon={faAngleDown} />
+            ) : (
+              <FontAwesomeIcon icon={faAngleUp} />
+            )}
+          </span>
         </p>
       </Link>
       {isApiSublistOpen && (
